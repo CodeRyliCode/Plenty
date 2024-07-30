@@ -30,10 +30,12 @@
 import express, {Express} from "express"
 import mongoose from "mongoose";
 import financialRecordRouter from "./routes/financial-records"
+import cors from "cors";
 const app: Express = express();
 const port = process.env.PORT || 3001;
 
 app.use(express.json());
+app.use(cors());
 const mongoURI: string =  "mongodb+srv://rylidavis94:v0mMcXRKsRIELn6Y@plenty.ggjduyv.mongodb.net/?retryWrites=true&w=majority&appName=Plenty";
 mongoose.connect(mongoURI).then(() => console.log("CONNECTED TO MONGODB")).catch((err) => console.error("Failed to Connect to Mongodb:", err))
 

@@ -83,19 +83,25 @@ useEffect(()=> {
 
 
     const deleteRecord = async (id: string) => {
-        const response = await fetch(`http://localhost:3001/:${id}`, {
+        const response = await fetch(
+            `http://localhost:3001/financial-records/${id}`, {
             method: "DELETE",
         })
 
         try {
             if (response.ok) {
                 const deletedRecord = await response.json()
-                setRecords((prev) => prev.filter((record) => record._id !== deletedRecord._id))
+                setRecords((prev) =>
+                    prev.filter((record) => record._id !== deletedRecord._id)
+                )
             }
         } catch (err) {}
     };
 
-    return <FinancialRecordsContext.Provider value={{records, addRecord, updateRecord, deleteRecord}}>{children}</FinancialRecordsContext.Provider>
+    return <FinancialRecordsContext.Provider
+        value={{records, addRecord, updateRecord, deleteRecord}}
+    >
+        {children}</FinancialRecordsContext.Provider>
 }
 
 export const useFinancialRecords = () => {

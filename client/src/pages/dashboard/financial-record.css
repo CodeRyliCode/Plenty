@@ -3,6 +3,7 @@
     width: 80%;
 }
 
+
 /* General styling for headers within the app */
 h1,
 h2 {
@@ -68,6 +69,7 @@ label {
 .table-container {
     margin: 20px;
     overflow-x: auto; /* Enables horizontal scrolling if the table is too wide */
+    width: fit-content;
 }
 
 .table {

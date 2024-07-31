@@ -40,6 +40,7 @@ const updateCellRecord = (rowIndex: number, columnId: string, value: any) => {
     const id = records[rowIndex]._id;
     updateRecord(id ?? "", {...records[rowIndex], [columnId]: value});
     }
+
     const columns: Array<Column<FinancialRecord>> = useMemo(() => [
         {
             Header: "Description",
@@ -80,7 +81,11 @@ const updateCellRecord = (rowIndex: number, columnId: string, value: any) => {
             Header: "Delete",
             id: "delete",
             Cell: ({row}) => (
-                <button onClick={() => deleteRecord(row.original._id ?? "")} className="button">Delete</button>),
+                <button
+                    onClick={() => deleteRecord(row.original._id ?? "")}
+                    className="button">
+                    Delete
+                </button>),
         },
     ], [records])
 

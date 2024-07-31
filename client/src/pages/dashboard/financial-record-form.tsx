@@ -9,10 +9,6 @@ const [amount, setAmount] = useState<string>("")
     const [paymentMethod, setPaymentMethod] = useState<string>("")
 const {addRecord} = useFinancialRecords()
 
-    console.log('description', description)
-    console.log('amount', amount)
-    console.log('category', category)
-    console.log('paymentMethod', paymentMethod)
 const {user} = useUser();
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();

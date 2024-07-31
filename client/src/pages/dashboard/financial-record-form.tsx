@@ -41,7 +41,12 @@ const {user} = useUser();
                 </div>
                 <div className="form-field">
                     <label>Amount:</label>
-                    <input type="number" required className="input" value={amount} onChange={(e) => setAmount(e.target.value)}/>
+                    <input
+                        type="number"
+                        required
+                        className="input"
+                        value={amount}
+                        onChange={(e) => setAmount(e.target.value)}/>
                 </div>
                 <div className="form-field">
                     <label>Category:</label>
